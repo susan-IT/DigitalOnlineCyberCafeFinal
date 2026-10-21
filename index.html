@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Online Cyber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #0a2647;
+      --primary-light: #1a3b5c;
+      --secondary: #1e7e6c;
+      --accent: #f4a261;
+      --accent-light: #e9c46a;
+      --cyan: #2a9d8f;
+      --cyan-dark: #1f7a6b;
+      --bg: #eef4f0;
+      --white: #ffffff;
+      --text: #1e2b37;
+      --muted: #5d6d7e;
+      --border: #c8d6d0;
+      --card-shadow: 0 8px 24px rgba(10, 38, 71, 0.10);
+      --gradient-hero: linear-gradient(145deg, #0a2647 0%, #1a3b5c 60%, #1e7e6c 100%);
+      --light-green: #7fd1b0;
+      --ds-bg: hsl(180, 20%, 99%);
+      --deep-green: #0c390c;
+      --deep-green-hover: #0c390c;
+      --forest-green: #063206;
+      --forest-green-hover: #0c390c;
+      --bright-blue:#0a10b3 ;
+      --bright-blue-hover: #0a10b3;
+      --whatsapp-green: #25530c;
+      --whatsapp-green-hover: #0d4607;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+      box-shadow: 0 2px 12px rgba(10,38,71,.08);
+    }
+    .nav-brand {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.4rem; font-weight: 900;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -.5px;
+    }
+    .nav-brand span { color: var(--secondary); }
+    .nav-status {
+      display: flex; align-items: center; gap: 6px;
+      background: #d5f0e6; color: #0d6b4a;
+      border: 1.5px solid #7fd1b0;
+      padding: 3px 16px; border-radius: 999px;
+      font-size: .82rem; font-weight: 700;
+      margin-left: 12px;
+    }
+    .nav-status::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--secondary);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    .nav-left { display: flex; align-items: center; gap: 10px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text);
+      font-size: .9rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-actions { display: flex; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 20px; border-radius: 8px; font-size: .88rem;
+      font-weight: 700; cursor: pointer; border: none;
+      text-decoration: none; transition: all .2s; font-family: inherit;
+    }
+    .btn-primary  { background: var(--primary); color: #fff; }
+    .btn-primary:hover  { background: var(--primary-light); transform: translateY(-1px); }
+    .btn-secondary { background: var(--secondary); color: #fff; }
+    .btn-secondary:hover { background: #1a6b5c; transform: translateY(-1px); }
+    .btn-accent{ background: var(--accent); color: #fff; }
+    .btn-accent:hover{ background: #d68910; transform: translateY(-1px); }
+    .btn-outline{ background: transparent; color: var(--primary);
+      border: 2px solid var(--primary); }
+    .btn-outline:hover{ background: var(--primary); color: #fff; }
+    .btn-lg { padding: 12px 28px; font-size: .98rem; border-radius: 10px; }
+
+    .btn-whatsapp {
+      background: var(--whatsapp-green);
+      color: #ffffff;
+      border: 1.5px solid #0a5706;
+    }
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-green-hover);
+      transform: translateY(-1px);
+      color: #ffffff;
+    }
+    .btn-call-blue {
+      background: var(--bright-blue);
+      color: #ffffff;
+      border: 1.5px solid #2323df;
+    }
+    .btn-call-blue:hover {
+      background: var(--bright-blue-hover);
+      transform: translateY(-1px);
+      color: #ffffff;
+    }
+
+    .btn-order-services {
+      display: inline-block;
+      background: var(--forest-green);
+      color: #ffffff;
+      padding: 16px 48px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all .3s;
+      border: 2px solid #1a6e1a;
+      cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 4px 20px rgba(34, 139, 34, 0.4);
+    }
+    .btn-order-services:hover {
+      background: var(--forest-green-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(34, 139, 34, 0.5);
+      color: #ffffff;
+    }
+    .btn-order-services .small-text {
+      display: block;
+      font-size: .65rem;
+      font-weight: 400;
+      opacity: 0.85;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+    }
+
+    /* ── DROPDOWN INSIDE SERVICE CARD ── */
+    .service-dropdown {
+      margin-top: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .service-dropdown.open {
+      display: flex;
+    }
+    .service-dropdown .drop-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 12px;
+      background: var(--bg);
+      border-radius: 6px;
+      font-size: .78rem;
+      border: 1px solid transparent;
+      transition: all .2s;
+      cursor: default;
+    }
+    .service-dropdown .drop-item:hover {
+      border-color: var(--secondary);
+      background: #e8f0fe;
+    }
+    .service-dropdown .drop-item .d-name {
+      font-weight: 500;
+      color: var(--text);
+      flex: 1;
+    }
+    .service-dropdown .drop-item .d-price {
+      font-weight: 700;
+      color: #c0392b;
+      white-space: nowrap;
+      margin: 0 10px;
+    }
+    .service-dropdown .drop-item .d-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 3px 12px;
+      font-size: .65rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s;
+      font-family: inherit;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .service-dropdown .drop-item .d-wa:hover {
+      background: var(--whatsapp-green-hover);
+    }
+    .dropdown-toggle {
+      background: transparent;
+      border: 1.5px solid var(--secondary);
+      color: var(--secondary);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: inherit;
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-toggle:hover {
+      background: var(--secondary);
+      color: #fff;
+    }
+    .dropdown-toggle .arrow {
+      transition: transform .3s;
+      display: inline-block;
+    }
+    .dropdown-toggle .arrow.open {
+      transform: rotate(180deg);
+    }
+
+    @keyframes pulse {
+      0%,100%{ opacity:1; transform:scale(1); }
+      50%    { opacity:.5; transform:scale(1.4); }
+    }
+
+    .hero {
+      background: var(--gradient-hero);
+      padding: 80px 5% 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      border-radius: 0 0 40px 40px;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero-content .brand-tag {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-content .hero-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .hero-content .hero-title span { color: var(--accent-light); }
+    .hero-content .hero-tagline {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .hero-content .hero-sub-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #b8dfd0;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .section { padding: 70px 5%; }
+    .section-title {
+      text-align: center; font-family: 'Nunito', sans-serif;
+      font-size: 2rem; font-weight: 900; color: var(--text);
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      text-align: center; color: var(--secondary);
+      font-weight: 700; font-size: 1.05rem; margin-bottom: 44px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--white); border-radius: 14px;
+      border: 1.5px solid var(--border);
+      padding: 20px 18px;
+      box-shadow: var(--card-shadow);
+      transition: transform .22s, box-shadow .22s, border-color .22s;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 36px rgba(10,38,71,.16);
+      border-color: var(--secondary);
+    }
+    .card-icons { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .card-icon-img {
+      width: 32px; height: 32px; border-radius: 6px;
+      background: var(--bg); display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem;
+      border: 1px solid var(--border);
+    }
+    .card-name {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      margin-bottom: 6px; color: var(--text);
+    }
+    .card-name.primary { color: var(--primary); }
+    .card-desc { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+    .card-btn-wrap { margin-top: 10px; }
+
+    .about-section {
+      background: var(--gradient-hero);
+      color: var(--white); padding: 70px 5%;
+      text-align: center;
+      border-radius: 40px 40px 0 0;
+    }
+    .about-section .section-title { color: #fff; }
+    .about-section .section-sub { color: #b8e0d4; }
+    .about-cards {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 24px; margin-top: 40px;
+    }
+    .about-card {
+      background: rgba(255,255,255,.10);
+      border-radius: 14px;
+      padding: 30px 20px;
+      border: 1.5px solid rgba(255,255,255,.15);
+      backdrop-filter: blur(6px);
+      transition: background .2s;
+    }
+    .about-card:hover { background: rgba(255,255,255,.2); }
+    .about-card .icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .about-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .about-card p { font-size: .85rem; opacity: .85; }
+
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #b8dfd0;
+      padding: 10px 28px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .about-badge span {
+      display: inline-block;
+      margin: 0 4px;
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .about-feature-item {
+      background: rgba(255,255,255,.06);
+      border-radius: 12px;
+      padding: 20px 16px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .about-feature-item .fi-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .about-feature-item h4 { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
+    .about-feature-item p { font-size: .8rem; opacity: .8; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--white); padding: 70px 5%; }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 24px; margin-top: 8px;
+    }
+    .testi-card {
+      background: var(--bg); border-radius: 14px;
+      padding: 22px 20px;
+      border: 1.5px solid var(--border);
+      position: relative;
+    }
+    .testi-quote {
+      font-size: 2.2rem; color: var(--secondary); opacity: .2;
+      position: absolute; top: 8px; right: 14px;
+      font-family: Georgia, serif; line-height: 1;
+    }
+    .testi-text {
+      font-size: .85rem; color: var(--text); margin-bottom: 12px; line-height: 1.5;
+    }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 800; font-size: .85rem;
+      flex-shrink: 0;
+    }
+    .testi-name { font-weight: 700; font-size: .85rem; }
+    .testi-role { font-size: .72rem; color: var(--muted); }
+    .stars-display { color: #facc15; font-size: .9rem; margin-bottom: 6px; letter-spacing: 2px; }
+
+    /* ── REVIEW MODAL ── */
+    .review-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(4px);
+    }
+    .review-modal-overlay.active {
+      display: flex;
+    }
+    .review-modal {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px 36px;
+      max-width: 560px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: modalSlideIn 0.3s ease;
+    }
+    @keyframes modalSlideIn {
+      from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .review-modal .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--muted);
+      background: none;
+      border: none;
+      transition: color .2s;
+      line-height: 1;
+    }
+    .review-modal .modal-close:hover {
+      color: #c0392b;
+    }
+    .review-modal h3 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .review-modal .modal-sub {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-bottom: 20px;
+    }
+    .review-modal .instructions {
+      background: #f0f7f4;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--secondary);
+    }
+    .review-modal .instructions p {
+      font-size: .82rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .review-modal .instructions p:last-child {
+      margin-bottom: 0;
+    }
+    .review-modal .instructions strong {
+      color: var(--primary);
+    }
+    .review-modal .form-group {
+      margin-bottom: 14px;
+    }
+    .review-modal label {
+      display: block;
+      font-weight: 600;
+      font-size: .85rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .review-modal input,
+    .review-modal textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: .85rem;
+      transition: border-color .2s;
+    }
+    .review-modal input:focus,
+    .review-modal textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+    .review-modal textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    .review-modal .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 8px;
+      font-size: 2rem;
+      cursor: pointer;
+      margin: 6px 0 10px;
+    }
+    .review-modal .star-rating input {
+      display: none;
+    }
+    .review-modal .star-rating label {
+      color: #ddd;
+      cursor: pointer;
+      transition: color .2s;
+      font-size: 2rem;
+    }
+    .review-modal .star-rating label:hover,
+    .review-modal .star-rating label:hover ~ label,
+    .review-modal .star-rating input:checked ~ label {
+      color: #6b4803e7;
+    }
+    .review-modal .submit-btn {
+      background: var(--secondary);
+      color: #0c0c0c;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: .9rem;
+      cursor: pointer;
+      transition: background .2s;
+      font-family: inherit;
+      width: 100%;
+    }
+    .review-modal .submit-btn:hover {
+      background: #592b08;
+    }
+    .review-modal .review-success {
+      display: none;
+      text-align: center;
+      padding: 14px;
+      background: #eef0f0;
+      color: #0d6b4a;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    .review-modal .review-success.show {
+      display: block;
+    }
+
+    .btn-write-review {
+      display: inline-block;
+      background: var(--accent);
+      color: lch(2.96% 0.28 199.59 / 0.96);
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+      font-family: inherit;
+      box-shadow: 0 4px 16px rgba(250, 110, 29, 0.3);
+      margin-top: 20px;
+    }
+    .btn-write-review:hover {
+      background: #eeb006;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 145, 6, 0.4);
+    }
+
+    .contact-section { padding: 70px 5%; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 28px; margin-top: 40px;
+    }
+    .contact-card {
+      background:#839889cd; border-radius: 16px;
+      padding: 36px 32px; border: 1.5px solid var(--border);
+      box-shadow: var(--card-shadow);
+    }
+    .contact-card h3 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.25rem; font-weight: 800;
+      color: var(--primary); margin-bottom: 24px;
+    }
+    .contact-item { display: flex; gap: 14px; margin-bottom: 22px; }
+    .contact-item-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--bg); display: flex; align-items: center;
+      justify-content: center; font-size: 1.2rem;
+      flex-shrink: 0; border: 1px solid var(--border);
+    }
+    .contact-item-body h4 { font-size: .9rem; font-weight: 700; margin-bottom: 4px; }
+    .contact-item-body p, .contact-item-body a {
+      font-size: .85rem; color: var(--muted); line-height: 1.6;
+      text-decoration: none;
+    }
+    .contact-item-body a:hover { color: var(--primary); }
+    .platform-card {
+      background: #839889cd; border-radius: 16px;
+      padding: 36px 32px; border: 1.5px solid var(--border);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      justify-content: center; gap: 16px;
+    }
+    .platform-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+    .platform-card p { font-size: .88rem; color: var(--muted); max-width: 340px; }
+
+    footer {
+      background: #0a1f2b; color: #b0c7d4;
+      padding: 40px 5% 24px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 32px; margin-bottom: 32px;
+    }
+    .footer-brand {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.4rem; font-weight: 900; color: #fff;
+      margin-bottom: 10px;
+    }
+    .footer-brand span { color: var(--secondary); }
+    .footer-col h4 { color: #fff; font-size: .9rem; font-weight: 700; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a {
+      color: #94a9b8; text-decoration: none; font-size: .85rem;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--cyan); }
+    .footer-bottom {
+      border-top: 1px solid #1e3a4a; padding-top: 20px;
+      text-align: center; font-size: .8rem; color: #6a8b9c;
+    }
+
+    @media(max-width: 1200px){
+      .services-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+    @media(max-width: 900px){
+      .services-grid{ grid-template-columns: repeat(2,1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media(max-width: 640px){
+      .services-grid{ grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero-content .hero-title { font-size: 2.8rem; }
+      .hero-content .hero-tagline { font-size: 1.2rem; }
+      .btn-order-services { padding: 12px 30px; font-size: .95rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .review-modal { padding: 28px 20px; }
+    }
+
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px;
+      background: #25d366; color: #fff; width: 58px; height: 58px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; box-shadow: 0 4px 20px rgba(37,211,102,.5);
+      text-decoration: none; z-index: 999;
+      animation: floatBounce 3s ease-in-out infinite;
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.12); }
+    @keyframes floatBounce {
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-8px); }
+    }
+
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    .nav-highlight {
+      color: var(--primary) !important; font-weight: 700 !important;
+      border-bottom: 2px solid var(--secondary); padding-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav>
+  <div class="nav-left">
+    <a class="nav-brand" href="#"><span>Digital</span> Online<span> Cyber</span></a>
+    <div class="nav-status">Open</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="tel:+254797392796" class="btn btn-call-blue">📞 Call Us</a>
+    <a href="https://wa.me/254797392796" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-content fade-in">
+    <div class="brand-tag">✦ Online CyberCafe Kenya </div>
+    <h1 class="hero-title"><span>Digital ✦ Online ✦</span> ✦Cyber✦</h1>
+    <p class="hero-tagline">✦ Services.</p>
+    <p class="hero-sub-text">Offering Cyber Services Online.</p>
+    
+    <a href="#services" class="btn-order-services"; scrollTo('#services');">
+      ✦Click to Pick a Service today!✦ </a>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="section" id="services">
+  <h2 class="section-title">Our Digital Services</h2>
+  <p class="section-sub">Lets Get Started - Select a Service!</p>
+  <div class="services-grid">
+
+    <!-- Government Services -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">🏛️</div>
+        <div class="card-icon-img">🦅</div>
+        <div class="card-icon-img">🪪</div>
+      </div>
+      <div class="card-name">Government Services</div>
+      <div class="card-desc">KRA, NTSA, SHA, BRS, eCitizen, Passport, and more official services.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div style="font-weight:700;font-size:.75rem;color:var(--primary);padding:4px 8px;background:#e8f0fe;border-radius:4px;margin-top:4px;">KRA Services</div>
+        <div class="drop-item"><span class="d-name">Individual KRA PIN Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Individual%20KRA%20PIN" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company KRA PIN Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20KRA%20PIN" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KRA PIN Update</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KRA%20PIN%20Update" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KRA PIN Retrieval</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KRA%20PIN%20Retrieval" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KRA Email Reset</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KRA%20Email%20Reset" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KRA Password Reset</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KRA%20Password%20Reset" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KRA Nil Returns Filing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KRA%20Nil%20Returns" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KRA P9 Returns Filing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KRA%20P9%20Returns" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">VAT Returns Filing</span><a href="https:/wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20VAT%20Returns" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Turnover Tax (TOT) Filing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20TOT%20Filing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Rental Income Tax Returns</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Rental%20Income%20Tax" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Withholding Tax Filing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Withholding%20Tax" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Tax Compliance Certificate (TCC)</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20TCC" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">eTIMS Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20eTIMS%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">eTIMS Invoice Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20eTIMS%20Invoice" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Tax Objections & Appeals</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Tax%20Objections" target="_blank" class="d-wa">Chat</a></div>
+        
+        <div style="font-weight:700;font-size:.75rem;color:var(--primary);padding:4px 8px;background:#e8f0fe;border-radius:4px;margin-top:8px;">NTSA Services</div>
+        <div class="drop-item"><span class="d-name">TIMS Account Creation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20TIMS%20Account" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Smart Driving Licence Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Smart%20Driving%20Licence" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Driving Licence Renewal</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Driving%20Licence%20Renewal" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Provisional Driving Licence (PDL)</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20PDL" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">PSV Badge Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20PSV%20Badge" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Logbook Transfer</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Logbook%20Transfer" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Duplicate Logbook</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Duplicate%20Logbook" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Vehicle Search</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Vehicle%20Search" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Reflective Number Plates</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Reflective%20Number%20Plates" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Vehicle Inspection Booking</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Vehicle%20Inspection" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Driving Test Booking</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Driving%20Test" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Vehicle Transfer</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Vehicle%20Transfer" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">NTSA Permits</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20NTSA%20Permits" target="_blank" class="d-wa">Chat</a></div>
+
+        <div style="font-weight:700;font-size:.75rem;color:var(--primary);padding:4px 8px;background:#e8f0fe;border-radius:4px;margin-top:8px;">SHA Services</div>
+        <div class="drop-item"><span class="d-name">SHA Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">SHA Profile Update</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20Profile%20Update" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Phone Number Update</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20Phone%20Update" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Name Change</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20Name%20Change" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Gender Update</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20Gender%20Update" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">ID Correction</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20ID%20Correction" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Premium Adjustment</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20Premium%20Adjustment" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Dependants Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20Dependants" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Employer Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SHA%20Employer%20Registration" target="_blank" class="d-wa">Chat</a></div>
+
+        <div style="font-weight:700;font-size:.75rem;color:var(--primary);padding:4px 8px;background:#e8f0fe;border-radius:4px;margin-top:8px;">Business Registration Services (BRS)</div>
+        <div class="drop-item"><span class="d-name">Business Name Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Business%20Name%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Changes</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20Changes" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Profile</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20Profile" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">CR12 Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20CR12" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Annual Returns</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Annual%20Returns" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Articles of Association</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Articles%20of%20Association" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Partnership Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Partnership%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Import & Export Licence</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Import%20Export%20Licence" target="_blank" class="d-wa">Chat</a></div>
+
+        <div style="font-weight:700;font-size:.75rem;color:var(--primary);padding:4px 8px;background:#e8f0fe;border-radius:4px;margin-top:8px;">Other Government Services</div>
+        <div class="drop-item"><span class="d-name">eCitizen Account Creation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20eCitizen%20Account" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Passport Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Passport%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Passport Renewal</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Passport%20Renewal" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Good Conduct Certificate</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Good%20Conduct" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">AGPO Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20AGPO" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">NSSF Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20NSSF%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">NSSF Updates</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20NSSF%20Updates" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Birth Certificate Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Birth%20Certificate" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Birth Certificate Replacement</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Birth%20Certificate%20Replacement" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Death Certificate Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Death%20Certificate" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Marriage Certificate Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Marriage%20Certificate" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Marriage Certificate Replacement</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Marriage%20Certificate%20Replacement" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">EACC Clearance Certificate</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20EACC%20Clearance" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">CRB Clearance Certificate</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20CRB%20Clearance" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">GHRIS Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20GHRIS" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Huduma Services Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Huduma" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Academic Services -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">🎓</div>
+        <div class="card-icon-img">📚</div>
+        <div class="card-icon-img">🏫</div>
+      </div>
+      <div class="card-name primary">Academic Services</div>
+      <div class="card-desc">KUCCPS, HELB, KMTC, TTC, University applications, academic writing etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">KUCCPS University Placement</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KUCCPS%20Placement" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KUCCPS TVET Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KUCCPS%20TVET" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KUCCPS Revision</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KUCCPS%20Revision" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">HELB/HEF Loan Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20HELB%20Loan" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">HELB Loan Appeal</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20HELB%20Appeal" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">HELB Clearance Certificate</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20HELB%20Clearance" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">KMTC Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20KMTC" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">TTC Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20TTC" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">University Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20University%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">College Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20College%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Scholarship Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Scholarship" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Student Portal Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Student%20Portal" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Admission Letter Download</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Admission%20Letter" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Exam Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Exam%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">CBC Assignment Typing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20CBC%20Assignment" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Project Typing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Project%20Typing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Thesis Formatting</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Thesis%20Formatting" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Research Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Research" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Internship Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Internship" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Attachment Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Attachment" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">CV Writing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20CV%20Writing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Cover Letter Writing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Cover%20Letter" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Online Applications -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">💻</div>
+        <div class="card-icon-img">📋</div>
+        <div class="card-icon-img">🔍</div>
+      </div>
+      <div class="card-name">Online Applications</div>
+      <div class="card-desc">Job applications, visa applications, account creation,online form filling etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Online Job Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Online%20Job%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Government Job Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Government%20Job" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">NGO Job Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20NGO%20Job" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">County Government Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20County%20Job" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Scholarship Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Scholarship%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Tender Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Tender%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Visa Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Visa%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">eVisa Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20eVisa" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Gmail Account Creation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Gmail%20Creation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Gmail Recovery</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Gmail%20Recovery" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Yahoo Email Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Yahoo%20Email" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">LinkedIn Profile Creation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20LinkedIn" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Social Media Account Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Social%20Media" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Google Account Recovery</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Google%20Recovery" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Appointment Booking</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Appointment%20Booking" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Utility Service Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Utility%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Exam Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Online%20Exam" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Account Creation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Account%20Creation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Public Service Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Public%20Service" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Form Filling</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Form%20Filling" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Business Services -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">💼</div>
+        <div class="card-icon-img">📊</div>
+        <div class="card-icon-img">🏢</div>
+      </div>
+      <div class="card-name primary">Business Services</div>
+      <div class="card-desc">Company registration, business plans, tenders, branding, and tax consultation.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Business Name Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Business%20Name" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Name Search</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20Name%20Search" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Profile</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20Profile" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">CR12 Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20CR12" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Annual Returns</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Annual%20Returns" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Import & Export Licence</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Import%20Export" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Business Plans</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Business%20Plan" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Tender Document Preparation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Tender%20Document" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Quotations</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Quotation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Invoice Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Invoice%20Design" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Receipt Book Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Receipt%20Book" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Letterheads</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Letterhead" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Stamps</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20Stamp" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Business Email Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Business%20Email" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Google Business Profile</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Google%20Business" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Business Branding</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Branding" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Tax Consultation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Tax%20Consultation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Payroll Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Payroll" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Bookkeeping Support</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Bookkeeping" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Travel & Visa -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div   
+        <div class="card-icon-img">🛂</div>
+        <div class="card-icon-img">🌍</div>
+      </div>
+      <div class="card-name">Travel & Visa Services </div>
+      <div class="card-desc">Passport, visa applications, flight booking,travel arrangement etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Passport Application</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Passport%20Application" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Passport Renewal</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Passport%20Renewal" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">eVisa Applications</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20eVisa" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Visa Application Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Visa%20Assistance" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Visa Appointment Booking</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Visa%20Appointment" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Flight Booking</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Flight%20Booking" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Hotel Booking</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Hotel%20Booking" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Travel Insurance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Travel%20Insurance" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Travel Itinerary</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Travel%20Itinerary" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Invitation Letter Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Invitation%20Letter" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Airport Transfer Booking</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Airport%20Transfer" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">International Student Visa Guidance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Student%20Visa" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Immigration Forms Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Immigration%20Forms" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Document Services -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">📄</div>
+        <div class="card-icon-img">🖨️</div>
+        <div class="card-icon-img">📎</div>
+      </div>
+      <div class="card-name">Document Services</div>
+      <div class="card-desc">Typing,Cv writing,  printing,Proposal Writing, scanning, binding, passport photos,document editing etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Typing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Typing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Printing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Printing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Colour Printing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Colour%20Printing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Photocopying</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Photocopying" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Scanning</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Scanning" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Lamination</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Lamination" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Spiral Binding</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Spiral%20Binding" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Document Binding</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Document%20Binding" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Passport Photos</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Passport%20Photos" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Photo Printing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Photo%20Printing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">PDF Editing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20PDF%20Editing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">PDF Conversion</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20PDF%20Conversion" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Document Formatting</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Document%20Formatting" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Document Editing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Document%20Editing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Report Formatting</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Report%20Formatting" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Proposal Writing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Proposal%20Writing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">CV Writing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20CV%20Writing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">CV Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20CV%20Design" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Cover Letter Writing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Cover%20Letter" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Certificate Printing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Certificate%20Printing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">ID Copying</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20ID%20Copying" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Passport Copying</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Passport%20Copying" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- IT Consultation -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">💻</div>
+        <div class="card-icon-img">🖥️</div>
+        <div class="card-icon-img">🔧</div>
+      </div>
+      <div class="card-name" style="color: var(--secondary);">IT Consultation</div>
+      <div class="card-desc">Computer repair, software installation, network setup, IT support etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Computer Repair</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Computer%20Repair" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Laptop Repair</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Laptop%20Repair" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Windows Installation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Windows%20Installation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Software Installation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Software%20Installation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Microsoft Office Installation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20MS%20Office" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Driver Installation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Driver%20Installation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Printer Installation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Printer%20Installation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Network Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Network%20Setup" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Wi-Fi Installation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Wi-Fi%20Installation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Router Configuration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Router%20Config" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">CCTV Consultation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20CCTV" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Data Backup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Data%20Backup" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Data Recovery</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Data%20Recovery" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Email Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Email%20Setup" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Cloud Storage Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Cloud%20Storage" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Remote Technical Support</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Remote%20Support" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Computer Upgrade</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Computer%20Upgrade" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Business IT Support</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Business%20IT" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Website Creation -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">🌐</div>
+        <div class="card-icon-img">🛡️</div>
+        <div class="card-icon-img">📱</div>
+      </div>
+      <div class="card-name primary">Website Creation</div>
+      <div class="card-desc">Personal, business, e-commerce websites, domain registration, and hosting.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Personal Website</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Personal%20Website" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Business Website</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Business%20Website" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">School Website</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20School%20Website" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Church Website</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Church%20Website" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">NGO Website</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20NGO%20Website" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">SACCO Website</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SACCO%20Website" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">E-Commerce Website</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20E-Commerce%20Website" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Portfolio Website</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Portfolio%20Website" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Landing Pages</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Landing%20Page" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Domain Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Domain%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Web Hosting</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Web%20Hosting" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Business Email Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Business%20Email" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Website Maintenance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Website%20Maintenance" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Website Redesign</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Website%20Redesign" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">SEO Optimization</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SEO" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Google Business Profile</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Google%20Business" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Store Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Online%20Store" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">M-Pesa Integration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20M-Pesa%20Integration" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Graphic Design -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">🎨</div>
+        <div class="card-icon-img">🖌️</div>
+        <div class="card-icon-img">💼</div>
+      </div>
+      <div class="card-name">Graphic Design</div>
+      <div class="card-desc">Logo, poster, flyer, banner, business cards,branding materials etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Logo Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Logo%20Design" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Poster Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Poster%20Design" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Flyer Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Flyer%20Design" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Banner Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Banner%20Design" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Business Cards</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Business%20Cards" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Company Profiles</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Company%20Profile" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Letterheads</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Letterhead" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Brochures</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Brochure" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Receipt Books</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Receipt%20Book" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Invoice Books</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Invoice%20Book" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Certificates</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Certificate" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Menus</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Menu" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Wedding Cards</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Wedding%20Card" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Funeral Programmes</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Funeral%20Programme" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Roll-Up Banners</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Roll-Up%20Banner" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Product Labels</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Product%20Label" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Stickers</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Sticker" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Social Media Posts</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Social%20Media%20Post" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">YouTube Thumbnails</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20YouTube%20Thumbnail" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Presentation Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Presentation" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Cyber Security -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">🔒</div>
+        <div class="card-icon-img">🛡️</div>
+        <div class="card-icon-img">🔐</div>
+      </div>
+      <div class="card-name primary">Cyber Security</div>
+      <div class="card-desc">Virus removal, antivirus, password recovery,security audits etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Virus Removal</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Virus%20Removal" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Malware Removal</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Malware%20Removal" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Antivirus Installation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Antivirus" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Computer Security Check</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Security%20Check" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Password Recovery</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Password%20Recovery" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Password Management</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Password%20Management" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Email Security Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Email%20Security" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Two-Factor Authentication (2FA)</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%202FA" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Secure Wi-Fi Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Secure%20Wi-Fi" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Data Backup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Data%20Backup" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Data Recovery</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Data%20Recovery" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Privacy Settings</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Privacy%20Settings" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Security Awareness Training</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Security%20Training" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Device Security Audit</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Security%20Audit" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Computer Training -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">🖥️</div>
+        <div class="card-icon-img">📊</div>
+        <div class="card-icon-img">📝</div>
+      </div>
+      <div class="card-name">Computer Training</div>
+      <div class="card-desc">Basic computer packages, Microsoft Office, design, digital marketing etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Basic Computer Packages</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Basic%20Computer" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Microsoft Word</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20MS%20Word" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Microsoft Excel</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20MS%20Excel" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Microsoft PowerPoint</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20MS%20PowerPoint" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Microsoft Access</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20MS%20Access" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Internet & Email</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Internet%20Email" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Typing Skills</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Typing%20Skills" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Canva Training</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Canva" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Graphic Design Basics</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Graphic%20Design%20Basics" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Adobe Photoshop Basics</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Photoshop" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Website Basics</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Website%20Basics" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Digital Marketing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Digital%20Marketing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">AI Tools (ChatGPT, Gemini, Copilot)</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20AI%20Tools" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Computer Maintenance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Computer%20Maintenance" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Cyber Security Basics</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Cyber%20Security%20Basics" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Freelancing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Freelancing" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Virtual Assistance -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">👩‍💼</div>
+        <div class="card-icon-img">📅</div>
+        <div class="card-icon-img">📧</div>
+      </div>
+      <div class="card-name">Virtual Assistance</div>
+      <div class="card-desc">Data entry, email management, scheduling, administrative support etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Data Entry</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Data%20Entry" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Document Typing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Document%20Typing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Email Management</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Email%20Management" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Calendar Management</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Calendar%20Management" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Appointment Scheduling</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Appointment%20Scheduling" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Form Filling</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Form%20Filling" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Internet Research</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Internet%20Research" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Customer Support</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Customer%20Support" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Live Chat Support</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Live%20Chat" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Spreadsheet Management</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Spreadsheet" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">File Organization</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20File%20Organization" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Cloud File Management</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Cloud%20File%20Management" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">WhatsApp Business Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20WhatsApp%20Business" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Zoom Meeting Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Zoom%20Setup" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Google Meet Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Google%20Meet" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Virtual Administrative Support</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Virtual%20Admin" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Transcription Services</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Transcription" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Digital Marketing -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">📱</div>
+        <div class="card-icon-img">📊</div>
+        <div class="card-icon-img">📈</div>
+      </div>
+      <div class="card-name primary">Digital Marketing</div>
+      <div class="card-desc">Social media management, advertising, SEO,  content creation etc .</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Facebook Page Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Facebook%20Page" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Facebook Advertising</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Facebook%20Ads" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Instagram Advertising</span>><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Instagram%20Ads" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">TikTok Advertising</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20TikTok%20Ads" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Google Ads</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Google%20Ads" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">WhatsApp Business Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20WhatsApp%20Business" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Social Media Management</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Social%20Media%20Management" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Content Creation</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Content%20Creation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">SEO Services</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SEO" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Email Marketing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Email%20Marketing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">SMS Marketing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20SMS%20Marketing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Google Business Profile Optimization</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Google%20Business" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">YouTube Channel Setup</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20YouTube%20Channel" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">LinkedIn Business Profile</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20LinkedIn%20Business" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Reputation Management</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Reputation%20Management" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Media Services -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">📹</div>
+        <div class="card-icon-img">🎬</div>
+        <div class="card-icon-img">🎨</div>
+      </div>
+      <div class="card-name">Media Services</div>
+      <div class="card-desc">Photo & video editing, motion graphics, social media content etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Photo Editing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Photo%20Editing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Background Removal</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Background%20Removal" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Image Enhancement</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Image%20Enhancement" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Video Editing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Video%20Editing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">YouTube Video Editing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20YouTube%20Editing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Intro & Outro Videos</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Intro%20Outro" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Motion Graphics</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Motion%20Graphics" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Slideshow Videos</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Slideshow" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Audio Editing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Audio%20Editing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Podcast Editing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Podcast%20Editing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Photo Restoration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Photo%20Restoration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Digital Invitations</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Digital%20Invitation" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">YouTube Thumbnail Design</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20YouTube%20Thumbnail" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Social Media Reels Editing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Reels%20Editing" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+    <!-- Internet Services -->
+    <div class="service-card fade-in">
+      <div class="card-icons">
+        <div class="card-icon-img">📡</div>
+        <div class="card-icon-img">🌐</div>
+        <div class="card-icon-img">📶</div>
+      </div>
+      <div class="card-name">Internet Services</div>
+      <div class="card-desc">Internet browsing, online meetings, file uploads,remote support etc.</div>
+      <button class="dropdown-toggle" onclick="toggleDropdown(this)">📋 View Services <span class="arrow">▼</span></button>
+      <div class="service-dropdown">
+        <div class="drop-item"><span class="d-name">Internet Browsing</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Internet%20Browsing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Wi-Fi Access</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Wi-Fi%20Access" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Email Access</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Email%20Access" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Meetings</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Online%20Meetings" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Zoom Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Zoom%20Assistance" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Google Meet Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Google%20Meet" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Exams</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Online%20Exams" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Registration</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Online%20Registration" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Online Payments</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Online%20Payments" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">File Uploads</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20File%20Uploads" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">File Downloads</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20File%20Downloads" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Cloud Storage Access</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Cloud%20Storage" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Video Conferencing Support</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Video%20Conferencing" target="_blank" class="d-wa">Chat</a></div>
+        <div class="drop-item"><span class="d-name">Remote Desktop Assistance</span><a href="https://wa.me/254797392796?text=Hello%20Digital%20Online%20Cyber%2C%20I%20need%20help%20with%20Remote%20Desktop" target="_blank" class="d-wa">Chat</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about-section" id="about">
+  <h2 class="section-title">Why Choose Digital Online Cyber?</h2>
+  <p class="section-sub">Kenya's #1 Online CyberCafe — Fast, Reliable &amp; Affordable</p>
+  
+  <div class="about-badge">
+    ⚡ <span>Fast</span> · <span>Accurate</span> · <span>100% Online</span> — serving all regions in Kenya
+  </div>
+
+  <div class="about-features">
+    <div class="about-feature-item fade-in">
+      <div class="fi-icon">⚡</div>
+      <h4>Fast Turnaround</h4>
+      <p>We handle your requests quickly so you never miss a deadline.</p>
+    </div>
+    <div class="about-feature-item fade-in">
+      <div class="fi-icon">🌐</div>
+      <h4>100% Online</h4>
+      <p>No queues. No travel. Everything handled securely from anywhere in Kenya.</p>
+    </div>
+    <div class="about-feature-item fade-in">
+      <div class="fi-icon">🔒</div>
+      <h4>Secure &amp; Confidential</h4>
+      <p>Your documents and personal information are always kept safe and private.</p>
+    </div>
+    <div class="about-feature-item fade-in">
+      <div class="fi-icon">💰</div>
+      <h4>Affordable Pricing</h4>
+      <p>Competitive rates for all services — quality help at prices that work for you.</p>
+    </div>
+    <div class="about-feature-item fade-in">
+      <div class="fi-icon">🕐</div>
+      <h4>24/7 Support</h4>
+      <p>Our team is available around the clock to assist you whenever you need.</p>
+    </div>
+  </div>
+  
+  <div style="margin-top:40px;">
+    <a href="#services" class="btn btn-primary btn-lg" scrollTo('#services');">Explore Our Services →</a>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials" id="testimonials">
+  <h2 class="section-title">What Our Clients Say</h2>
+  <p class="section-sub">Real Reviews from Real Kenyans</p>
+  
+  <div class="testimonials-grid" id="reviewsContainer">
+    <!-- Existing reviews will be displayed here -->
+  </div>
+
+  <!-- Write Review Button -->
+  <div style="text-align:center;">
+    <button class="btn-write-review" onclick="openReviewModal()">✍️ Write a Review</button>
+  </div>
+</section>
+
+<!-- ═══ REVIEW MODAL ═══ -->
+<div class="review-modal-overlay" id="reviewModal">
+  <div class="review-modal">
+    <button class="modal-close" onclick="closeReviewModal()">✕</button>
+    <h3>✍️ Write a Review</h3>
+    <p class="modal-sub">Share your experience with Digital Online Cyber</p>
+    <form id="reviewForm" onsubmit="submitReview(event)">
+      <div class="form-group">
+        <label for="reviewName">Your Name</label>
+        <input type="text" id="reviewName" placeholder="e.g. John Doe" required />
+      </div>
+      <div class="form-group">
+        <label for="reviewLocation">Your Location</label>
+        <input type="text" id="reviewLocation" placeholder="e.g. Nairobi, Kenya" required />
+      </div>
+      <div class="form-group">
+        <label>Your Rating</label>
+        <div class="star-rating">
+          <input type="radio" name="rating" id="star5" value="5" />
+          <label for="star5" title="5 stars">★</label>
+          <input type="radio" name="rating" id="star4" value="4" />
+          <label for="star4" title="4 stars">★</label>
+          <input type="radio" name="rating" id="star3" value="3" />
+          <label for="star3" title="3 stars">★</label>
+          <input type="radio" name="rating" id="star2" value="2" />
+          <label for="star2" title="2 stars">★</label>
+          <input type="radio" name="rating" id="star1" value="1" />
+          <label for="star1" title="1 star">★</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="reviewText">Your Review</label>
+        <textarea id="reviewText" placeholder="Share your experience with us..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit Review</button>
+      <div class="review-success" id="reviewSuccess">✅ Thank you! Your review has been posted.</div>
+    </form>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact-section" id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p style="text-align:center;color:var(--muted);max-width:560px;margin:0 auto 0;">Need help with your documents, visa, or eCitizen tasks? Our online support team is available across Kenya 24/7.</p>
+  <div class="contact-grid">
+    <div class="contact-card fade-in">
+      <h3>How to Reach Us</h3>
+      <div class="contact-item"><div class="contact-item-icon">🌐</div><div class="contact-item-body"><h4>Service Areas</h4><p>We operate 100% online and serve all regions in Kenya, including Nairobi, Mombasa, Kisumu, Eldoret, and more.</p></div></div>
+      <div class="contact-item"><div class="contact-item-icon">📞</div><div class="contact-item-body"><h4>Phone</h4><a href="tel:+254797392796">+254 797 392 796</a><br/><a href="tel:+254797392796">+254 797 392 796</a></div></div>
+      <div class="contact-item"><div class="contact-item-icon">✉️</div><div class="contact-item-body"><h4>Email</h4><a href="mailto:info@digitalonlinecyber.com">info@digitalonlinecyber.com</a><br/><a href="mailto:support@digitalonlinecyber.com">support@digitalonlinecyber.com</a></div></div>
+      <div class="contact-item"><div class="contact-item-icon">🕐</div><div class="contact-item-body"><h4>Working Hours</h4><p>Online Support: 24/7<br/>Document Services: Mon–Sat, 5AM – 11PM</p></div></div>
+    </div>
+    <div class="platform-card fade-in">
+      <div style="font-size:3rem;">💻</div>
+      <div><h3>Our Platform</h3><p>Digital Online Cyber is a digital-first platform — no queues, no travel. Everything is handled online, securely and conveniently from anywhere in Kenya.</p></div>
+      <a href="https://wa.me/254797392796" class="btn btn-whatsapp btn-lg" target="_blank">💬 Chat on WhatsApp</a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="tel:+254797392796" class="btn btn-call-blue">📞 Call Now</a>
+        <a href="mailto:info@digitalonlinecyber.com" class="btn btn-outline">✉️ Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand"><span>Digital</span>Online <span>Cyber</span></div><p style="font-size:.85rem;color:#94a9b8;max-width:240px;line-height:1.6;">Kenya's trusted online cybercafe. Fast, secure, and affordable digital services for every Kenyan.</p></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Government Services</a></li><li><a href="#services">Academic Services</a></li><li><a href="#services">Business Services</a></li><li><a href="#services">Travel &amp; Visa</a></li><li><a href="#services">Graphic Design</a></li></ul></div>
+    <div class="footer-col"><h4>More Services</h4><ul><li><a href="#services">Online Applications</a></li><li><a href="#services">Website Creation</a></li><li><a href="#services">Cyber Security</a></li><li><a href="#services">Virtual Assistance</a></li><li><a href="#services">IT Consultation</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+254797392796">+254 797 392 796</a></li><li><a href="mailto:info@digitalonlinecyber.com">info@digitalonlinecyber.com</a></li><li><a href="mailto:support@digitalonlinecyber.com">support@digitalonlinecyber.com</a></li><li><a href="https://wa.me/254797392796" target="_blank">WhatsApp Chat</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Digital Online Cyber. All rights reserved. | Serving all Kenyans 24/7</div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/254797392796" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<script>
+  // Initial reviews data
+  let reviews = [
+    {
+      name: "James Mwangi",
+      location: "Nairobi, Kenya",
+      rating: 5,
+      text: "Digital Online Cyber helped me get my KRA pin and NTSA documents sorted in under an hour! Truly a lifesaver — no more long queues at the office."
+    },
+    {
+      name: "Amina Wanjiku",
+      location: "Mombasa, Kenya",
+      rating: 5,
+      text: "I applied for my UK visa through Digital Online Cyber and the whole process was smooth. They guided me through every step."
+    },
+    {
+      name: "Brian Kiplagat",
+      location: "Eldoret, Kenya",
+      rating: 5,
+      text: "Got my KUCCPS application and university placement done fast. The team is professional and very helpful. I will use them again."
+    }
+  ];
+
+  function renderReviews() {
+    const container = document.getElementById('reviewsContainer');
+    container.innerHTML = reviews.map((review, index) => {
+      const initials = review.name.split(' ').map(n => n[0]).join('').toUpperCase();
+      const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+      return `
+        <div class="testi-card fade-in">
+          <div class="testi-quote">"</div>
+          <div class="stars-display">${stars}</div>
+          <p class="testi-text">${review.text}</p>
+          <div class="testi-author">
+            <div class="testi-avatar">${initials}</div>
+            <div>
+              <div class="testi-name">${review.name}</div>
+              <div class="testi-role">${review.location}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+    document.querySelectorAll('.testi-card.fade-in').forEach((el, i) => {
+      el.style.transitionDelay = (i % 3) * 0.08 + 's';
+      setTimeout(() => el.classList.add('visible'), 100);
+    });
+  }
+
+  function openReviewModal() {
+    document.getElementById('reviewModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeReviewModal() {
+    document.getElementById('reviewModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function submitReview(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('reviewName').value.trim();
+    const location = document.getElementById('reviewLocation').value.trim();
+    const rating = document.querySelector('input[name="rating"]:checked');
+    const text = document.getElementById('reviewText').value.trim();
+    
+    if (!rating) {
+      alert('Please select a star rating.');
+      return;
+    }
+    
+    const newReview = {
+      name: name,
+      location: location,
+      rating: parseInt(rating.value),
+      text: text
+    };
+    
+    reviews.unshift(newReview);
+    renderReviews();
+    
+    // Show success message
+    const success = document.getElementById('reviewSuccess');
+    success.classList.add('show');
+    setTimeout(() => success.classList.remove('show'), 4000);
+    
+    // Reset form and close modal after delay
+    document.getElementById('reviewForm').reset();
+    setTimeout(() => {
+      closeReviewModal();
+    }, 1500);
+  }
+
+  function scrollTo(id) {
+    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function toggleDropdown(btn) {
+    const card = btn.closest('.service-card');
+    const dropdown = card.querySelector('.service-dropdown');
+    const arrow = btn.querySelector('.arrow');
+    dropdown.classList.toggle('open');
+    arrow.classList.toggle('open');
+  }
+
+  // Close modal on overlay click
+  document.getElementById('reviewModal').addEventListener('click', function(e) {
+    if (e.target === this) closeReviewModal();
+  });
+
+  // Render initial reviews on page load
+  document.addEventListener('DOMContentLoaded', renderReviews);
+
+  // Intersection Observer for fade-in
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in:not(.testi-card)').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 0.08 + 's';
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>
